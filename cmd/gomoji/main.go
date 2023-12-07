@@ -159,10 +159,10 @@ func main() {
 
 	fmt.Println()
 	preview := []string{
-		output.Sprintf("<indianred>%s [%s] %s</>", intents[1][idxe], scopes[1][idxs], subject),
-		"",
+		fmt.Sprintf("%s [%s] %s", intents[1][idxe], scopes[1][idxs], subject),
 	}
 	if len(msg) > 0 {
+		preview = append(preview, "")
 		preview = append(preview, msg...)
 	}
 	output.PrintSection("darkseagreen", "Previsualización", preview...)
