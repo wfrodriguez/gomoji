@@ -2,8 +2,6 @@ module github.com/wfrodriguez/gomoji
 
 go 1.21.4
 
-replace github.com/wfrodriguez/console => /home/walter/Desarrollo/go/console
-
 require github.com/wfrodriguez/console v0.0.0-20231205023906-bf52b99c54dd
 
 require (
