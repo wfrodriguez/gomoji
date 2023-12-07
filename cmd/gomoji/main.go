@@ -37,7 +37,6 @@ var scopes = [][]string{
 
 func git(args ...string) (stdout string, stderr string, exitCode int) {
 	defaultFailedCode := 1
-	log.Println("run command: git", args)
 	var outbuf, errbuf bytes.Buffer
 	cmd := exec.Command("git", args...)
 	cmd.Stdout = &outbuf
@@ -65,7 +64,6 @@ func git(args ...string) (stdout string, stderr string, exitCode int) {
 		exitCode = ws.ExitStatus()
 	}
 
-	log.Printf("command result, stdout: %v, stderr: %v, exitCode: %v", stdout, stderr, exitCode)
 	return
 }
 
@@ -121,18 +119,16 @@ func main() {
 	idxe, _, erre := input.Select(
 		input.WithSelectLabel("Emoji"),
 		input.WithItems(intents[0]),
+		input.WithSize(10),
 	)
 	perror(erre)
 
 	idxs, _, errs := input.Select(
 		input.WithSelectLabel("Scope"),
 		input.WithItems(scopes[0]),
-		input.WithSize(10),
+		input.WithSize(8),
 	)
 	perror(errs)
-
-	_ = idxe
-	_ = idxs
 
 	fmt.Println()
 	fmt.Println(output.Sprintf("<input>Asunto:</>"))
