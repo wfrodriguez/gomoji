@@ -456,6 +456,7 @@
       "entity": "&#129370;",
       "code": ":egg:",
       "description": "Add or update an easter egg.",
+      "descEs": "Añade o actualiza un huevo de Pascua.",
       "name": "egg",
       "semver": "patch"
     },
